@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
     return Scaffold(
 appBar: AppBar(
   backgroundColor: Colors.cyan,
-  title:Text("Islami") ,
+  title:Text("Islami" ) ,
 ),
     );
   }
