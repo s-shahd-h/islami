@@ -3,7 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 class MyTheme{
   static const primary_color=Color(0xffB7935F);
 
-  ThemeData lightMode=ThemeData(
+ static ThemeData lightMode=ThemeData(
+     textTheme: TextTheme(
+       bodyLarge:
+       GoogleFonts.elMessiri(fontSize: 30, fontWeight: FontWeight.bold),
+       bodyMedium:
+       GoogleFonts.elMessiri(fontSize: 25, fontWeight: FontWeight.w300),
+       bodySmall:
+       GoogleFonts.elMessiri(fontSize: 20, fontWeight: FontWeight.w500),
+     ),
       brightness: Brightness.light,
       scaffoldBackgroundColor: Colors.transparent,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(

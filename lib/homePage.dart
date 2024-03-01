@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/model/sura_model.dart';
 import 'package:islami/sura_content.dart';
@@ -11,6 +12,7 @@ import 'buttom_navigation_bar.dart';
 import 'my_theme.dart';
 
 class QuranPage extends StatefulWidget {
+  static const String routeName='quraan';
   QuranPage({super.key});
 
   @override
@@ -154,7 +156,7 @@ class _QuranPageState extends State<QuranPage> {
           elevation: 0,
           centerTitle: true,
           title: Text(
-            "اسلامي",
+            AppLocalizations.of(context)!.title,
             style: GoogleFonts.elMessiri(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
@@ -177,7 +179,7 @@ class _QuranPageState extends State<QuranPage> {
               color: MyTheme.primary_color,
             ),
             Text(
-              'اسم السورة',
+              AppLocalizations.of(context)!.suraName,
               style: GoogleFonts.elMessiri(
                   fontSize: 25, fontWeight: FontWeight.w600),
             ),
@@ -192,7 +194,7 @@ class _QuranPageState extends State<QuranPage> {
                       InkWell(
                         onTap: (){
                           Navigator.pushNamed(context, Sura.routeName,
-                          arguments:SuraModel(suraName: suraName[index]),
+                          arguments:SuraModel(suraName: suraName[index],index:index ,),
 
                           );
                         },
@@ -208,15 +210,13 @@ class _QuranPageState extends State<QuranPage> {
                       );
                   },
                   separatorBuilder: (context, index) =>
-                      const Divider(thickness: 2, color: MyTheme.primary_color),
+                      const Divider(thickness: 0.5, color: MyTheme.primary_color),
                   itemCount: suraName.length),
             ),
 
           ],
 
         ),
-
-        bottomNavigationBar: BottomNavigation(),
 
         ),
     );
